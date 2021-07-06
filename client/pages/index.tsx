@@ -2,8 +2,9 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 
 interface Props {
-  message: string
+  message?: string
 }
+
 const Home: NextPage<Props> = ({ message }) => {
   console.log(message)
   return (
@@ -22,10 +23,3 @@ const Home: NextPage<Props> = ({ message }) => {
 
 export default Home;
 
-Home.getInitialProps = async (ctx) => {
-  const res = await fetch('http://localhost:4000/api/v1')
-  const json = await res.json();
-  return {
-    message: json.message
-  }
-}

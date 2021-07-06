@@ -11,10 +11,12 @@ export class ItemResolvers {
     return await ItemModel.findById({ _id: id })
   }
 
+
   @Query(() => [Item])
   async returnAllItem() {
     return await ItemModel.find();
   }
+  //pagination sanitization need to be done
 
   @Query(() => Boolean)
   async deleteItem(@Arg("id") id: string) {

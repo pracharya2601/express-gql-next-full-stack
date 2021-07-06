@@ -13,6 +13,7 @@ export class UserResolvers {
 
   @Mutation(() => User)
   async createUser(@Arg("data") { name, email, password }: UserInput): Promise<User> {
+
     const user = (await UserModel.create({
       name,
       email,

@@ -15,6 +15,10 @@ export class Item {
   @Property({ required: true })
   description: String;
 
+  @Field()
+  @Property({ required: true })
+  user_id: string
+
 }
 
 export const ItemModel = getModelForClass(Item);

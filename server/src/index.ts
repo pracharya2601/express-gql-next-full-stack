@@ -19,8 +19,10 @@ const server = async () => {
   });
   const PORT = 4000;
 
-  const mongoose = await connect('mongodb://localhost:27017/test', { useNewUrlParser: true });
+  const mongoose = await connect('mongodb+srv://measaprakash:SGcVdThRsPTi9yyK@cluster0.na3gx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true });
   await mongoose.connection;
+  //mongodb+srv://<username>:<password>@cluster0.na3gx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  //'mongodb://localhost:27017/test
 
   apolloServer.applyMiddleware({ app })
   app.listen(PORT, () => {
@@ -31,3 +33,4 @@ const server = async () => {
 server().catch(error => {
   console.error(error)
 })
+
